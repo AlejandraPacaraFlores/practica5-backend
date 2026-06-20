@@ -29,7 +29,8 @@ dependencies {
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
-    runtimeOnly 'org.postgresql:postgresql'
+    implementation 'org.xerial:sqlite-jdbc:3.50.3.0'
+    implementation 'org.hibernate.orm:hibernate-community-dialects'
 
     annotationProcessor 'org.projectlombok:lombok'
 
