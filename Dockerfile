@@ -2,10 +2,11 @@
 FROM gradle:8.5-jdk17 AS build
 WORKDIR /app
 COPY . .
-RUN ./gradlew build -x test
 
-# Darle permisos de ejecución al wrapper de Gradle
+# Primero damos los permisos (¡Debe ir aquí arriba!)
 RUN chmod +x gradlew
+
+# Luego compilamos
 RUN ./gradlew build -x test
 
 # Ejecutar la aplicación con la imagen oficial moderna de Java 17
